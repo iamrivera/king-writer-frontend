@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import getPosts from "../actions/getPosts";
 import PostForm from "../components/PostForm";
 import PostList from "../components/PostList";
+import Post from "../components/Post";
 
 class PostsContainer extends Component {
   componentDidMount() {
@@ -14,6 +15,7 @@ class PostsContainer extends Component {
     return (
       <Switch>
         <Route exact path="/posts/new" component={PostForm} />
+        <Route path="/posts/:id" render={(routerProps) => <Post {...routerProps} posts={this.props.posts} />}/>
         <Route
           exact path="/posts"
           render={() => (
