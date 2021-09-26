@@ -4,7 +4,7 @@ export function getPhotos() {
       .then((response) => response.json())
       .then((photos) =>
         dispatch({
-          type: "GET_PHOTOS_SUCCESS",
+          type: "GET_PHOTOS_REQUEST",
           payload: photos,
         })
       );
