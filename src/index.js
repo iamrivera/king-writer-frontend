@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react";
 import { createStore, compose } from "redux";
 
 import "./bootstrap.min2.css";
