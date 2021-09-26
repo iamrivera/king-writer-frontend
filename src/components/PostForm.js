@@ -21,7 +21,7 @@ class PostForm extends Component {
   render() {
     return (
       <div className="container mt-3">
-        <Form>
+        <Form onSubmit={this.handleOnSubmit}>
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalTitle">
             <Form.Label column sm={2}>
               Title
@@ -30,6 +30,8 @@ class PostForm extends Component {
               <Form.Control
                 type="title"
                 placeholder="Give Your Post a Fun Title"
+                value={this.state.title}
+                onChange={this.handleOnChange}
               />
             </Col>
           </Form.Group>
@@ -42,6 +44,8 @@ class PostForm extends Component {
               <Form.Control
                 type="textarea"
                 placeholder="Write Your Story Here"
+                value={this.state.body}
+                onChange={this.handleOnChange}
               />
             </Col>
           </Form.Group>
@@ -58,7 +62,7 @@ class PostForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      createPost: (formData) => dispatch(createPocket(formData)),
+      createPost: (formData) => dispatch(createPost(formData)),
     };
   };
 
