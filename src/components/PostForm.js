@@ -4,8 +4,8 @@ import { Form, Button, Col, Row } from "react-bootstrap";
 import {createPost} from "../actions/createPost"
 
 class PostForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
       body: "",
@@ -27,6 +27,8 @@ class PostForm extends Component {
             body: this.state.body,
         }
     })
+
+    this.setState({title: "", body: ""})
   }
 
   render() {
@@ -73,11 +75,11 @@ class PostForm extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-    return {
-      posts: state.posts,
-    };
-  };
+// const mapStateToProps = (state) => {
+//     return {
+//       posts: state.posts,
+//     };
+//   };
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -85,4 +87,4 @@ const mapDispatchToProps = (dispatch) => {
     };
   };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
+export default connect(null, mapDispatchToProps)(PostForm);
