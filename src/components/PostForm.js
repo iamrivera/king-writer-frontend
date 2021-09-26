@@ -1,7 +1,23 @@
 import React, { Component } from "react";
-import {Form, Button, Col, Row } from 'react-bootstrap';
+import { Form, Button, Col, Row } from "react-bootstrap";
 
 class PostForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      title: "",
+      body: "",
+    };
+  }
+
+  handleOnChange = (event) => {
+
+  }
+
+  handleOnSubmit = (event) => {
+
+  }
+
   render() {
     return (
       <div className="container mt-3">
@@ -11,20 +27,22 @@ class PostForm extends Component {
               Title
             </Form.Label>
             <Col sm={10}>
-              <Form.Control type="title" placeholder="Give Your Post a Fun Title" />
+              <Form.Control
+                type="title"
+                placeholder="Give Your Post a Fun Title"
+              />
             </Col>
           </Form.Group>
 
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            controlId="formHorizontalText"
-          >
+          <Form.Group as={Row} className="mb-3" controlId="formHorizontalText">
             <Form.Label column sm={2}>
               Content
             </Form.Label>
             <Col sm={10}>
-              <Form.Control type="textarea" placeholder="Write Your Story Here" />
+              <Form.Control
+                type="textarea"
+                placeholder="Write Your Story Here"
+              />
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
@@ -37,5 +55,11 @@ class PostForm extends Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      createPost: (formData) => dispatch(createPocket(formData)),
+    };
+  };
 
 export default PostForm;
