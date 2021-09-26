@@ -14,7 +14,7 @@ const PostList = (props) => {
           <Card.Body>
             <Card.Title>{post.title}</Card.Title>
             <Card.Text>{post.body}</Card.Text>
-            <Button variant="primary" as={Link} to="/posts/:id">View Post</Button>
+            <Button variant="primary" as={Link} to={`/posts/${post.id}`}>View Post</Button>
           </Card.Body>
         </Card>
       ))}
