@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
+import {createPost} from "../actions/createPost"
 
 class PostForm extends Component {
   constructor() {
@@ -11,7 +12,7 @@ class PostForm extends Component {
   }
 
   handleOnChange = (event) => {
-
+    
   }
 
   handleOnSubmit = (event) => {
