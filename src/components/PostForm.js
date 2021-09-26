@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import {createPost} from "../actions/createPost"
 
@@ -12,11 +13,20 @@ class PostForm extends Component {
   }
 
   handleOnChange = (event) => {
-    
+    console.log(event.target)
+    this.setState({
+      [event.target.name]: event.target.value
+    })
   }
 
   handleOnSubmit = (event) => {
-
+    event.preventDefault();
+    this.props.createPost({
+        post: {
+            title: this.state.title,
+            body: this.state.body,
+        }
+    })
   }
 
   render() {
@@ -30,6 +40,7 @@ class PostForm extends Component {
             <Col sm={10}>
               <Form.Control
                 type="title"
+                name="title"
                 placeholder="Give Your Post a Fun Title"
                 value={this.state.title}
                 onChange={this.handleOnChange}
@@ -44,6 +55,7 @@ class PostForm extends Component {
             <Col sm={10}>
               <Form.Control
                 type="textarea"
+                name="body"
                 placeholder="Write Your Story Here"
                 value={this.state.body}
                 onChange={this.handleOnChange}
@@ -61,10 +73,16 @@ class PostForm extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+    return {
+      posts: state.posts,
+    };
+  };
+
 const mapDispatchToProps = (dispatch) => {
     return {
       createPost: (formData) => dispatch(createPost(formData)),
     };
   };
 
-export default PostForm;
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
