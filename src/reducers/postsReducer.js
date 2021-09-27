@@ -6,6 +6,9 @@ export default function postsReducer(state = [], action) {
     case "POST_POST_REQUEST":
       return [...state, action.payload];
 
+    case "DELETE_POST_REQUEST":
+      return 
+
     default:
       return state;
   }

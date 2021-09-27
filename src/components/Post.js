@@ -2,12 +2,13 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 
-
 const Post = (props) => {
     // console.log(props.posts)
     // console.log(props.routerProps.match.params.id)
     let post = props.posts.filter(post => post.id == props.routerProps.match.params.id)[0]
     // console.log(post)
+
+
   return (
     <div className="container">
       <Card style={{ width: "18rem" }}>
@@ -17,11 +18,19 @@ const Post = (props) => {
           <Card.Text>
            {post.body}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary">Edit</Button>
+          <p></p>
+          <Button variant="primary" onClick={() => props.deletePosts(post.id) }>Delete</Button>
         </Card.Body>
       </Card>
     </div>
   );
 };
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      deletePosts: (postId) => dispatch(getPosts(postId)),
+    };
+  };
 
 export default connect(null, null)(Post);
