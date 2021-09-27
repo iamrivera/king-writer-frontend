@@ -66,7 +66,7 @@ class PostForm extends Component {
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
             <Col sm={{ span: 10, offset: 2 }}>
-              <Button type="submit">Publish Story</Button>
+              <Button variant="success" type="submit">Publish Story</Button>
             </Col>
           </Form.Group>
         </Form>
