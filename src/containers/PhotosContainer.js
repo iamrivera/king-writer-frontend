@@ -8,12 +8,13 @@ import PhotoList from "../components/PostList";
 class PhotosContainer extends Component {
     componentDidMount() {
         this.props.getPhotos();
+    
       }
 
     render() {
         return (
             <Switch>
-                <Route exact path="/photos" render={() => (<PhotoList photos={this.state.photos, console.log(this.props)} />)}/>
+                <Route exact path="/photos" render={() => (<PhotoList photos={this.props.photos} /> )}/>
             </Switch>
         )
     }
