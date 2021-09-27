@@ -1,6 +1,6 @@
 export const deletePost = (postId) => {
   return (dispatch) => {
-    fetch("http://127.0.0.1:3000/photos", {
+    fetch(`http://127.0.0.1:3000/posts/${postId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
