@@ -15,11 +15,11 @@ class PostsContainer extends Component {
     return (
       <Switch>
         <Route exact path="/posts/new" component={PostForm} />
-        <Route path="/posts/:id" render={(routerProps) => <Post routerProps={routerProps} posts={this.props.posts} />}/>
+        <Route path="/posts/:id" render={(routerProps) => <Post routerProps={routerProps} delete={this.props.deletePost} posts={this.props.posts} />}/>
         <Route
           exact path="/posts"
           render={() => (
-            <PostList posts={this.props.posts} />
+            <PostList delete={this.props.deletePost} posts={this.props.posts} />
           )}
         />
       </Switch>
@@ -36,6 +36,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getPosts: () => dispatch(getPosts()),
+    deletePost: (thePost) => dispatch({type: "DELETE_POST_REQUEST", payload: thePost})
   };
 };
 

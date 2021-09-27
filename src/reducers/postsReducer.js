@@ -7,7 +7,7 @@ export default function postsReducer(state = [], action) {
       return [...state, action.payload];
 
     case "DELETE_POST_REQUEST":
-      return 
+      return [...state.filter(post => post.id !== action.payload.post.id)]
 
     default:
       return state;

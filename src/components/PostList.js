@@ -13,7 +13,9 @@ const PostList = (props) => {
           <Card.Body>
             <Card.Title>{post.title}</Card.Title>
             <Card.Text>{post.body}</Card.Text>
-            <Button variant="primary" as={Link} to={`/posts/${post.id}`}>View Post</Button>
+            <Button variant="primary" as={Link} to={`/posts/${post.id}`}>Read</Button>
+            <Button variant="primary">Rewrite</Button>
+            <Button variant="primary" onClick={event => window.confirm('Are you sure you want to remove this story?') && props.delete({post})}>Remove</Button>
           </Card.Body>
         </Card>
       ))}
