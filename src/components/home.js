@@ -7,7 +7,7 @@ const Home = () => {
       <h4 className="mt-5 mb-4">
         Welcome to Monarch Writer 👑 A place for anyone and everyone to find
         inspiration and 📝 stories. Here's a few words of advice from
-        one of the Monarchs of Literature, Niel Gaiman!
+        one of the Monarchs of Literature, Neil Gaiman!
       </h4>
       <Container className="mt-5 text-primary bg-dark" fluid="m">
         <iframe

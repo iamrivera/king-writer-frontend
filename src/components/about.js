@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Image, Col } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 
 const About = () => {
   return (
