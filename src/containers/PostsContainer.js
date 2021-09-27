@@ -15,7 +15,7 @@ class PostsContainer extends Component {
     return (
       <Switch>
         <Route exact path="/posts/new" component={PostForm} />
-        <Route path="/posts/:id" render={(routerProps) => <Post {...routerProps} posts={this.props.posts} />}/>
+        <Route path="/posts/:id" render={(routerProps) => <Post routerProps={routerProps} posts={this.props.posts} />}/>
         <Route
           exact path="/posts"
           render={() => (
