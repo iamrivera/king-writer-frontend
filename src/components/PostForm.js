@@ -33,10 +33,10 @@ class PostForm extends Component {
 
   render() {
     return (
-      <div className="container mt-3">
+      <div className="container-fluid mt-5">
         <Form onSubmit={this.handleOnSubmit}>
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalTitle">
-            <Form.Label column sm={2}>
+            <Form.Label column="lg" lg={2}>
               Title
             </Form.Label>
             <Col sm={10}>
@@ -51,7 +51,7 @@ class PostForm extends Component {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalText">
-            <Form.Label column sm={2}>
+            <Form.Label column="lg" lg={2}>
               Content
             </Form.Label>
             <Col sm={10}>

@@ -1,4 +1,4 @@
-export function getPhotos() {
+export default function getPhotos() {
   return (dispatch) => {
     fetch("http://127.0.0.1:3000/photos")
       .then((response) => response.json())
