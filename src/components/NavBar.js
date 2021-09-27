@@ -27,9 +27,9 @@ export class NavBar extends Component {
               <Nav.Link as={Link} to="/quotes">
                 Inspirational Quotes
               </Nav.Link>
-              <Nav.Link as={Link} to="/photos">
+              {/* <Nav.Link as={Link} to="/photos">
                 Inspirational Photos
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
