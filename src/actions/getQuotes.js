@@ -10,3 +10,5 @@ export function getQuotes() {
       );
   };
 }
+
+export default getQuotes;

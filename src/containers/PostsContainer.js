@@ -9,6 +9,7 @@ import Post from "../components/Post";
 class PostsContainer extends Component {
   componentDidMount() {
     this.props.getPosts();
+   
   }
 
   render() {
