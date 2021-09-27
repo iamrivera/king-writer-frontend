@@ -15,7 +15,7 @@ class QuotesContainer extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/quotes" component={QuoteList} />
+        <Route exact path="/quotes" render={() => <QuoteList quotes={this.props.quotes}/>} />
       </Switch>
     );
   }

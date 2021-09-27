@@ -1,6 +1,6 @@
 import React from "react";
 
-const QuoteList = () => {
+const QuoteList = (props) => {
   return <div>Hello World</div>;
 };
 
