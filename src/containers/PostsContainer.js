@@ -12,6 +12,7 @@ class PostsContainer extends Component {
    
   }
 
+
   render() {
     return (
       <Switch>
@@ -30,7 +31,7 @@ class PostsContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts,
+    posts: state.posts
   };
 };
 
